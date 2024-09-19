@@ -1,17 +1,18 @@
-import { ModeToggle } from "@/components/toggle-button";
+import { Button } from "@/components/ui/button";
 import {
   RegisterLink,
   LoginLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function Home() {
-  const { getUser } = getKindeServerSession();
-  const data = await getUser();
   return (
-    <div className="p-5">
-      <LoginLink>Sign in</LoginLink>
-      <RegisterLink>Sign up</RegisterLink>
+    <div className="w-screen h-screen flex justify-center items-center gap-6">
+      <LoginLink>
+        <Button variant={"default"}>Sign in</Button>
+      </LoginLink>
+      <RegisterLink>
+        <Button variant={"outline"}>Sign up</Button>
+      </RegisterLink>
     </div>
   );
 }
