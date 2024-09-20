@@ -1,5 +1,5 @@
-export async function CreateNewQR(formData: any) {
-  const link = formData.get("link");
-  console.log(link);
-  return link;
-}
+export const CreateNewQR = async (prevState: any, formData: FormData) => {
+  const value = formData.get("name") as string;
+
+  return value
+};
