@@ -43,9 +43,8 @@ export default function AuthenticationPage() {
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
-                &ldquo;QR Code Studio, kullanıcıların hızlı ve kolay bir şekilde
-                kişiselleştirilebilir QR kodlar oluşturmasına olanak
-                sağlar."&rdquo;
+                QR Code Studio, kullanıcıların hızlı ve kolay bir şekilde
+                kişiselleştirilebilir QR kodlar oluşturmasına olanak sağlar.
               </p>
             </blockquote>
           </div>
