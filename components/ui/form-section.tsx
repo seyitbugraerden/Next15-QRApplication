@@ -1,6 +1,8 @@
 "use client";
 import { toast } from "sonner";
 import { Button } from "./button";
+import { useActionState } from "react";
+import { ForExampleDemo } from "@/app/actions";
 
 const FormSection = ({
   user,
@@ -9,14 +11,19 @@ const FormSection = ({
   user: any;
   checkedValue: boolean;
 }) => {
+  const [state, formAction] = useActionState(ForExampleDemo, null);
+
   return (
     <div>
-      <form className="w-full grid grid-cols-2 gap-12 xl:max-w-[70%] mx-auto">
+      <form
+        action={formAction}
+        className="w-full grid grid-cols-2 gap-12 xl:max-w-[70%] mx-auto"
+      >
         <div className="relative z-0 w-full mb-5 group">
           <input
             defaultValue={user.given_name}
             type="text"
-            name="floating_password"
+            name="given_name"
             id="floating_password"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer"
             placeholder=" "
@@ -33,7 +40,7 @@ const FormSection = ({
           <input
             defaultValue={user.family_name}
             type="text"
-            name="floating_password"
+            name="family_name"
             id="floating_password"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer"
             placeholder=" "
@@ -50,7 +57,7 @@ const FormSection = ({
           <input
             defaultValue={user.username}
             type="email"
-            name="content"
+            name="username"
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
           />
@@ -65,7 +72,7 @@ const FormSection = ({
           <input
             defaultValue={user.email}
             type="email"
-            name="content"
+            name="email"
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
           />
@@ -80,7 +87,7 @@ const FormSection = ({
           <input
             defaultValue={user.slug ? user.slug : undefined}
             type="text"
-            name="content"
+            name="slug"
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
           />
@@ -113,7 +120,6 @@ const FormSection = ({
           <input
             defaultValue={user.slug ? user.slug : undefined}
             type="text"
-            name="content"
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
           />
@@ -142,7 +148,6 @@ const FormSection = ({
             </span>
           </label>
         </div>
-
         <Button
           className="w-full text-lg font-semibold col-span-2"
           variant={"default"}

@@ -1,3 +1,4 @@
+"use server";
 import { requireUser } from "./require-user";
 import prisma from "@/utils/db";
 
@@ -18,6 +19,7 @@ export const CreateUserFunction = async () => {
   return;
 };
 
-export const createHoppy = async (prevState: any, formData: FormData) => {
+export const ForExampleDemo = async (prevState: any, formData: FormData) => {
   console.log(formData);
+  return;
 };
