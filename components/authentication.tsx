@@ -1,8 +1,11 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-
-import { UserAuthForm } from "./ui/user-auth-form";
+import logo from "@/public/logo.png";
+import {
+  LoginLink,
+  RegisterLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
+import { Button } from "./ui/button";
 
 export const metadata: Metadata = {
   title: "Authentication",
@@ -16,9 +19,11 @@ export default function AuthenticationPage() {
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div className="absolute inset-0 bg-zinc-900">
             <Image
-              src="https://picsum.photos/1920/1920"
+              src="/Dynalogic.jpg"
               alt="intro"
-              className="absolute top-0 left-0 h-full w-full aspect-auto filter brightness-[.4]"
+              width={1920}
+              height={1920}
+              className="absolute top-0 left-0 filter brightness-[.4]"
             />
           </div>
           <div className="relative z-20 flex items-center text-lg font-medium">
@@ -39,52 +44,43 @@ export default function AuthenticationPage() {
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
-                &ldquo;This library has saved me countless hours of work and
-                helped me deliver stunning designs to my clients faster than
-                ever before.&rdquo;
+                &ldquo;QR Code Studio, kullanıcıların hızlı ve kolay bir şekilde
+                kişiselleştirilebilir QR kodlar oluşturmasına olanak
+                sağlar."&rdquo;
               </p>
-              <footer className="text-sm">Sofia Davis</footer>
             </blockquote>
           </div>
         </div>
         <div className="lg:p-8">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+            <Image src={logo} alt="logo" />
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="text-2xl font-semibold tracking-tight">
-                Create an account
+                Welcome to Millenium Digital
               </h1>
               <p className="text-sm text-muted-foreground">
-                Enter your email below to create your account
+                First of All You have to create an account
               </p>
             </div>
-            <UserAuthForm />
-            <p className="px-8 text-center text-sm text-muted-foreground">
-              By clicking continue, you agree to our{" "}
-              <Link
-                href="/terms"
-                className="underline underline-offset-4 hover:text-primary"
+            <LoginLink postLoginRedirectURL="/api/auth/creation">
+              <Button
+                className="w-full font-semibold text-lg"
+                variant={"default"}
               >
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/privacy"
-                className="underline underline-offset-4 hover:text-primary"
+                Sign in
+              </Button>
+            </LoginLink>
+            <RegisterLink postLoginRedirectURL="/api/auth/creation">
+              <Button
+                className="w-full text-lg font-semibold"
+                variant={"outline"}
               >
-                Privacy Policy
-              </Link>
-              .
-            </p>
+                Sign up
+              </Button>
+            </RegisterLink>
           </div>
         </div>
       </div>
     </>
   );
 }
-
-// <LoginLink postLoginRedirectURL="/api/auth/creation">
-//         <Button variant={"default"}>Sign in</Button>
-//       </LoginLink>
-//       <RegisterLink postLoginRedirectURL="/api/auth/creation">
-//         <Button variant={"outline"}>Sign up</Button>
-//       </RegisterLink>
