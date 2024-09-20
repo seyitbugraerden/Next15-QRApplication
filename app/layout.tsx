@@ -6,6 +6,8 @@ import { ModeToggle } from "@/components/toggle-button";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import Transition from "./transition";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -54,6 +56,7 @@ export default async function RootLayout({
             )}
           </div>
           {children}
+          <Toaster richColors closeButton />
         </ThemeProvider>
       </body>
     </html>

@@ -17,3 +17,7 @@ export const CreateUserFunction = async () => {
   });
   return;
 };
+
+export const createHoppy = async (prevState: any, formData: FormData) => {
+  console.log(formData);
+};
