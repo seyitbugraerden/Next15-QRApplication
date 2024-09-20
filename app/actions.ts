@@ -1,5 +1,19 @@
-export const CreateNewQR = async (prevState: any, formData: FormData) => {
-  const value = formData.get("name") as string;
+import { requireUser } from "./require-user";
+import prisma from "@/utils/db";
 
-  return value
+export const getUserFunction = async () => {
+  const user = await requireUser();
+  return user;
+};
+
+export const CreateUserFunction = async () => {
+  const user = await requireUser();
+  const response = await prisma.user.create({
+    data: {
+      id: user.id,
+      email: user.email,
+      element: "deneme",
+    },
+  });
+  return;
 };

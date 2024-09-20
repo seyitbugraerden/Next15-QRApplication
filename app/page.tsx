@@ -7,10 +7,10 @@ import {
 export default async function Home() {
   return (
     <div className="w-screen h-screen flex justify-center items-center gap-6">
-      <LoginLink>
+      <LoginLink postLoginRedirectURL="/api/auth/creation">
         <Button variant={"default"}>Sign in</Button>
       </LoginLink>
-      <RegisterLink>
+      <RegisterLink postLoginRedirectURL="/api/auth/creation">
         <Button variant={"outline"}>Sign up</Button>
       </RegisterLink>
     </div>
