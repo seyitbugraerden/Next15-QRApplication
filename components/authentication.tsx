@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import logo from "@/public/logo.png";
 import {
   LoginLink,
   RegisterLink,
@@ -53,7 +52,7 @@ export default function AuthenticationPage() {
         </div>
         <div className="lg:p-8">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-            <Image src={logo} alt="logo" />
+            <Image src="/logo.png" width={600} height={200} alt="logo" />
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="text-2xl font-semibold tracking-tight">
                 Welcome to Millenium Digital
