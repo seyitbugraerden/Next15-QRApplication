@@ -1,3 +1,4 @@
+import AuthenticationPage from "@/components/authentication";
 import QRCodePage from "@/components/qr-code";
 import SendPrisma from "@/components/send-prisma";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
@@ -10,6 +11,7 @@ const Dashboard = async () => {
   return (
     <div>
       Dashboard
+      
       <QRCodePage state={userid} />
     </div>
   );

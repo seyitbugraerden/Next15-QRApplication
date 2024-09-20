@@ -37,7 +37,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-row items-center gap-6 absolute right-5 top-5">
+          <div className="flex flex-row items-center gap-6 absolute right-5 top-5 z-[999]">
             <ModeToggle />
             {data && (
               <LogoutLink>
