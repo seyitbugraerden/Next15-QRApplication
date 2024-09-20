@@ -9,7 +9,6 @@ const Dashboard = async () => {
   return (
     <div>Dashboard
       <QRCodePage state={userid} />
-
     </div>
   )
 }
