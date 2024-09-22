@@ -13,8 +13,8 @@ model User {
   email    String  @unique
   name     String
   surname  String?
-  username String
+  username String  @unique
   slug     String
-  type     String? // Allow type to be nullable
+  type     String?
   orgname  String?
 }
