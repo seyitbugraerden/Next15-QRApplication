@@ -14,7 +14,7 @@ model User {
   name     String
   surname  String?
   username String  @unique
-  slug     String
+  slug     String  @unique
   type     String?
   orgname  String?
 
@@ -25,8 +25,7 @@ model Link {
   id        String   @id @default(uuid())
   title     String
   link      String
-  createdAt DateTime @default(now())
 
-  user   User?   @relation("UserLinks", fields: [userId], references: [id])
-  userId String?
+  user   User   @relation("UserLinks", fields: [userId], references: [id])
+  userId String
 }

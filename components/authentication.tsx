@@ -5,8 +5,6 @@ import {
   RegisterLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "./ui/button";
-import { requireUser } from "@/app/require-user";
-import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Authentication",
@@ -14,10 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default async function AuthenticationPage() {
-  const user = await requireUser();
-  if (user) {
-    redirect("/dashboard");
-  }
   return (
     <>
       <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">

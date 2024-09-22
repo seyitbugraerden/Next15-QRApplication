@@ -1,55 +1,7 @@
 "use server";
 import { redirect } from "next/navigation";
 import { requireUser } from "./require-user";
-import prisma from "@/utils/db";
-
-export const getUserFunction = async () => {
-  const user = await requireUser();
-  return user;
-};
-
-//Get Section
-
-export const GetUniqueCode = async (username: string) => {
-  const userKinde = await requireUser();
-  if (userKinde) {
-    const user = await prisma.user.findUnique({
-      where: {
-        username: username,
-      },
-    });
-
-    return user;
-  }
-};
-
-export const GetUniqueMail = async (email: any) => {
-  const userKinde = await requireUser();
-  if (userKinde) {
-    const element = await prisma.user.findUnique({
-      where: {
-        email: email,
-      },
-    });
-
-    return element;
-  }
-};
-
-export const GetLinks = async () => {
-  const userKinde = await requireUser();
-  if (userKinde) {
-    const links = await prisma.link.findMany({
-      where: {
-        userId: userKinde.id,
-      },
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
-    return links;
-  }
-};
+import prisma from "@/app/utils/db";
 
 // Create Section
 
@@ -63,31 +15,43 @@ export const ForExampleDemo = async (prevState: any, formData: FormData) => {
   const type = (formData.get("type") as string) || "";
   const orgName = (formData.get("orgname") as string) || "";
 
-  const response = await prisma.user.create({
-    data: {
-      id: user.id,
-      email: email,
-      name: givenName,
-      surname: surname,
-      username: username,
-      slug: slug,
-      type: type,
-      orgname: orgName,
-    },
-  });
+  try {
+    const response = await prisma.user.create({
+      data: {
+        id: user.id,
+        email: email,
+        name: givenName,
+        surname: surname,
+        username: username,
+        slug: slug,
+        type: type,
+        orgname: orgName,
+      },
+    });
 
-  return redirect(`/${slug}`);
+    return redirect(`/${slug}`);
+  } catch (error) {
+    console.error("Error creating user:", error);
+    throw new Error("Could not create user.");
+  }
 };
 
 export const AddNewLink = async (prevState: any, formData: FormData) => {
   const user = await requireUser();
   const title = (formData.get("title") as string) || "";
   const link = (formData.get("link") as string) || "";
-  const response = await prisma.link.create({
-    data: {
-      title: title,
-      link: link,
-      userId: user.id,
-    },
-  });
+
+  try {
+    const response = await prisma.link.create({
+      data: {
+        title: title,
+        link: link,
+        userId: user.id,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Error creating link:", error);
+    throw new Error("Could not create link.");
+  }
 };

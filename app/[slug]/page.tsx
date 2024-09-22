@@ -1,26 +1,16 @@
 import AddLink from "@/components/add-link";
-import Link from "next/link";
+import prisma from "@/app/utils/db";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import React from "react";
-import { GetLinks } from "../actions";
 
 const QRPage = async () => {
-  const data = await GetLinks();
-  console.log(data);
-
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+  console.log(user.id);
   return (
     <>
       <div className="flex justify-center items-start w-screen h-screen py-24">
         <div className="flex flex-col gap-6 items-center min-w-[360px]">
-          {data &&
-            data.map((item: any, idx: any) => (
-              <Link
-                key={idx}
-                href={item.link}
-                className="p-5 border-[1px] border-primary rounded-2xl w-full text-center"
-              >
-                {item.title}
-              </Link>
-            ))}
           <AddLink />
         </div>
       </div>

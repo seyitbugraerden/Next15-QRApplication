@@ -3,20 +3,38 @@ import Image from "next/image";
 import React from "react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
-import { GetUniqueMail } from "../actions";
+import prisma from "../utils/db";
 
 const Dashboard = async () => {
-  const { getUser } = getKindeServerSession();
-  const { isAuthenticated } = getKindeServerSession();
+  const { getUser, isAuthenticated } = getKindeServerSession();
+
   const user = await getUser();
+
   if (!user) {
     return redirect("/");
   }
+
   const checked = await isAuthenticated();
-  const isAdded = await GetUniqueMail(user.email);
-  if (isAdded) {
-    redirect(`/${isAdded.slug}`);
+
+  let added;
+  try {
+    added = await prisma.user.findUnique({
+      where: {
+        id: user.id,
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    // Optionally, handle the error (e.g., redirect to an error page)
+    return redirect("/error");
   }
+
+  if (added) {
+    return redirect(`/${added.slug}`);
+  }
+
+  // Optionally handle the case where the user is not found
+
   return (
     <>
       <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
