@@ -25,7 +25,6 @@ const Dashboard = async () => {
     });
   } catch (error) {
     console.error("Error fetching user:", error);
-    // Optionally, handle the error (e.g., redirect to an error page)
     return redirect("/error");
   }
 
@@ -33,7 +32,6 @@ const Dashboard = async () => {
     return redirect(`/${added.slug}`);
   }
 
-  // Optionally handle the case where the user is not found
 
   return (
     <>
