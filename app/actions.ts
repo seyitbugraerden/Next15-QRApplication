@@ -64,3 +64,13 @@ export const AddNewLink = async (prevState: any, formData: FormData) => {
     },
   });
 };
+
+export const GetLinks = async () => {
+  const user = await requireUser();
+  const response = await prisma.link.findMany({
+    where: {
+      userId: user.id,
+    },
+  });
+  return response;
+};
