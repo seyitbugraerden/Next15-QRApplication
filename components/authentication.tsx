@@ -60,7 +60,7 @@ export default function AuthenticationPage() {
                 First of All You have to create an account
               </p>
             </div>
-            <LoginLink postLoginRedirectURL="/api/auth/creation">
+            <LoginLink postLoginRedirectURL="/dashboard">
               <Button
                 className="w-full font-semibold text-lg"
                 variant={"default"}

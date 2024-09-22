@@ -9,8 +9,12 @@ generator client {
 }
 
 model User {
-  id      String  @id @default(uuid())
-  email   String? @unique
-  name    String?
-  element String?
+  id       String  @id
+  email    String  @unique
+  name     String
+  surname  String?
+  username String
+  slug     String
+  type     String? // Allow type to be nullable
+  orgname  String?
 }

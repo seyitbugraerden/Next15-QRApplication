@@ -15,16 +15,8 @@ export async function GET() {
       id: user.id,
     },
   });
-
   if (!dbUser) {
-    dbUser = await prisma.user.create({
-      data: {
-        id: user.id,
-        email: user.email ?? "",
-        element: "deneme",
-      },
-    });
+    return redirect("/");
   }
-
   return redirect("/");
 }

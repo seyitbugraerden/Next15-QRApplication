@@ -40,7 +40,7 @@ const FormSection = ({
           <input
             defaultValue={user.family_name}
             type="text"
-            name="family_name"
+            name="surname"
             id="floating_password"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer"
             placeholder=" "
@@ -56,7 +56,7 @@ const FormSection = ({
         <div className="relative z-0 w-full mb-5 group">
           <input
             defaultValue={user.username}
-            type="email"
+            type="text"
             name="username"
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
@@ -101,12 +101,13 @@ const FormSection = ({
         <div className="relative z-0 w-full mb-5 group">
           <select
             id="underline_select"
+            name="type"
             className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
           >
-            <option selected disabled>
+            <option value="Organization Type" disabled>
               Organization Type
             </option>
-            <option value="Pseronel">Pseronel</option>
+            <option value="Personel">Personel</option>
             <option value="Company">Company</option>
           </select>
           <label
@@ -120,6 +121,7 @@ const FormSection = ({
           <input
             defaultValue={user.slug ? user.slug : undefined}
             type="text"
+            name="orgname"
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
           />
