@@ -64,7 +64,7 @@ export default async function RootLayout({
               </LoginLink>
             )}
           </div>
-          {children}
+          <main className="overflow-x-hidden">{children}</main>
           <Toaster richColors closeButton />
         </ThemeProvider>
       </body>

@@ -43,3 +43,13 @@ export const GetUniqueCode = async (username: string) => {
 
   return user;
 };
+
+export const GetUniqueMail = async (email: any) => {
+  const element = await prisma.user.findUnique({
+    where: {
+      email: email,
+    },
+  });
+
+  return element;
+};

@@ -1,8 +1,9 @@
 import FormSection from "@/components/ui/form-section";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Image from "next/image";
-import { redirect } from "next/navigation";
 import React from "react";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
+import { GetUniqueMail } from "../actions";
 
 const Dashboard = async () => {
   const { getUser } = getKindeServerSession();
@@ -12,6 +13,11 @@ const Dashboard = async () => {
     return redirect("/");
   }
   const checked = await isAuthenticated();
+  const isAdded = await GetUniqueMail(user.email);
+  console.log(isAdded);
+  if (isAdded) {
+    redirect(`/${isAdded.slug}`);
+  }
   return (
     <>
       <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
