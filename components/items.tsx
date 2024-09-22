@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const Items = async ({ slug }: { slug: any }) => {
+  console.log(slug)
   try {
     const userData = await prisma.user.findUnique({
       where: { slug: slug },

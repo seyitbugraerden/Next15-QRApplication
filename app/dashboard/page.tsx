@@ -3,25 +3,14 @@ import Image from "next/image";
 import React from "react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
-import prisma from "../utils/db";
-import { toast } from "sonner";
 
 const Dashboard = async () => {
   const { getUser, isAuthenticated } = getKindeServerSession();
-
   const user = await getUser();
-
+  if (!user) {
+    redirect("/");
+  }
   const checked = await isAuthenticated();
-
-  let added;
-  try {
-    added = await prisma.user.findUnique({
-      where: {
-        id: user.id,
-      },
-    });
-    redirect(`/${added?.slug}`);
-  } catch (error) {}
 
   return (
     <>
