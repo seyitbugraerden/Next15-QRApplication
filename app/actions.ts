@@ -8,6 +8,51 @@ export const getUserFunction = async () => {
   return user;
 };
 
+//Get Section
+
+export const GetUniqueCode = async (username: string) => {
+  const userKinde = await requireUser();
+  if (userKinde) {
+    const user = await prisma.user.findUnique({
+      where: {
+        username: username,
+      },
+    });
+
+    return user;
+  }
+};
+
+export const GetUniqueMail = async (email: any) => {
+  const userKinde = await requireUser();
+  if (userKinde) {
+    const element = await prisma.user.findUnique({
+      where: {
+        email: email,
+      },
+    });
+
+    return element;
+  }
+};
+
+export const GetLinks = async () => {
+  const userKinde = await requireUser();
+  if (userKinde) {
+    const links = await prisma.link.findMany({
+      where: {
+        userId: userKinde.id,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+    return links;
+  }
+};
+
+// Create Section
+
 export const ForExampleDemo = async (prevState: any, formData: FormData) => {
   const user = await requireUser();
   const givenName = (formData.get("given_name") as string) || "";
@@ -34,43 +79,15 @@ export const ForExampleDemo = async (prevState: any, formData: FormData) => {
   return redirect(`/${slug}`);
 };
 
-export const GetUniqueCode = async (username: string) => {
-  const user = await prisma.user.findUnique({
-    where: {
-      username: username,
-    },
-  });
-
-  return user;
-};
-
-export const GetUniqueMail = async (email: any) => {
-  const element = await prisma.user.findUnique({
-    where: {
-      email: email,
-    },
-  });
-
-  return element;
-};
-
 export const AddNewLink = async (prevState: any, formData: FormData) => {
   const user = await requireUser();
+  const title = (formData.get("title") as string) || "";
+  const link = (formData.get("link") as string) || "";
   const response = await prisma.link.create({
     data: {
-      title: "deneme",
-      link: "deneme",
+      title: title,
+      link: link,
       userId: user.id,
     },
   });
-};
-
-export const GetLinks = async () => {
-  const user = await requireUser();
-  const response = await prisma.link.findMany({
-    where: {
-      userId: user.id,
-    },
-  });
-  return response;
 };
