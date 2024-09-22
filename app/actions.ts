@@ -12,10 +12,10 @@ export const ForExampleDemo = async (prevState: any, formData: FormData) => {
   const user = await requireUser();
 
   const givenName = (formData.get("given_name") as string) || "";
-  const surname = (formData.get("surname") as string) || ""; // Provide a default value for surname
+  const surname = (formData.get("surname") as string) || "";
   const username = (formData.get("username") as string) || "";
   const slug = (formData.get("slug") as string) || "";
-  const type = (formData.get("type") as string) || ""; // Provide a default value for type
+  const type = (formData.get("type") as string) || "";
   const orgName = (formData.get("orgname") as string) || "";
 
   const response = await prisma.user.create({
@@ -26,7 +26,7 @@ export const ForExampleDemo = async (prevState: any, formData: FormData) => {
       surname: surname,
       username: username,
       slug: slug,
-      type: type, // Ensure type is never null
+      type: type,
       orgname: orgName,
     },
   });
