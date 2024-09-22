@@ -1,3 +1,4 @@
+import AddLink from "@/components/add-link";
 import Link from "next/link";
 import React from "react";
 
@@ -18,6 +19,7 @@ const QRPage = () => {
           >
             Youtube
           </Link>
+          <AddLink />
         </div>
       </div>
     </>

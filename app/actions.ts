@@ -53,3 +53,14 @@ export const GetUniqueMail = async (email: any) => {
 
   return element;
 };
+
+export const AddNewLink = async (prevState: any, formData: FormData) => {
+  const user = await requireUser();
+  const response = await prisma.link.create({
+    data: {
+      title: "deneme",
+      link: "deneme",
+      userId: user.id,
+    },
+  });
+};
