@@ -4,15 +4,12 @@ import React from "react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import prisma from "../utils/db";
+import { toast } from "sonner";
 
 const Dashboard = async () => {
   const { getUser, isAuthenticated } = getKindeServerSession();
 
   const user = await getUser();
-
-  if (!user) {
-    return redirect("/");
-  }
 
   const checked = await isAuthenticated();
 
@@ -23,15 +20,8 @@ const Dashboard = async () => {
         id: user.id,
       },
     });
-  } catch (error) {
-    console.error("Error fetching user:", error);
-    return redirect("/error");
-  }
-
-  if (added) {
-    return redirect(`/${added.slug}`);
-  }
-
+    redirect(`/${added?.slug}`);
+  } catch (error) {}
 
   return (
     <>
