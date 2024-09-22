@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/toggle-button";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Transition from "./transition";
@@ -49,10 +49,19 @@ export default async function RootLayout({
         >
           <div className="flex flex-row items-center gap-6 absolute right-5 top-5 z-[999]">
             <ModeToggle />
-            {data && (
+            {data ? (
               <LogoutLink>
                 <Button variant={"default"}>Log out</Button>
               </LogoutLink>
+            ) : (
+              <LoginLink postLoginRedirectURL="/dashboard">
+                <Button
+                  className="w-full font-semibold text-lg"
+                  variant={"default"}
+                >
+                  Sign in
+                </Button>
+              </LoginLink>
             )}
           </div>
           {children}
