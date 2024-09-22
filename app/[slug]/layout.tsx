@@ -9,8 +9,6 @@ const layout = async ({
   params: any;
 }) => {
   const data = await GetUniqueCode(params.slug);
-  console.log(params.slug)
-  console.log(data);
   return <div>{children}</div>;
 };
 

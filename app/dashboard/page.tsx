@@ -14,7 +14,6 @@ const Dashboard = async () => {
   }
   const checked = await isAuthenticated();
   const isAdded = await GetUniqueMail(user.email);
-  console.log(isAdded);
   if (isAdded) {
     redirect(`/${isAdded.slug}`);
   }
