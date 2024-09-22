@@ -1,12 +1,16 @@
 import FormSection from "@/components/ui/form-section";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const Dashboard = async () => {
   const { getUser } = getKindeServerSession();
   const { isAuthenticated } = getKindeServerSession();
   const user = await getUser();
+  if (!user) {
+    return redirect("/");
+  }
   const checked = await isAuthenticated();
   return (
     <>
