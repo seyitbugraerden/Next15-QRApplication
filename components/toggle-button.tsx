@@ -1,20 +1,39 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  // Use effect to set mounted state
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // Prevent rendering until mounted
+  }
 
   return (
     <div>
-      <div className="cursor-pointer hover:scale-125 duration-300 group" onClick={() => setTheme("dark")}>
-        {theme === "light" && <Moon size={24}  className="group-hover:text-primary"/>}
-      </div>
-      <div className="cursor-pointer hover:scale-125 duration-300 group" onClick={() => setTheme("light")}>
-        {theme === "dark" && <Sun size={24}  className="group-hover:text-primary"/>}
-      </div>
+      {theme === "dark" ? (
+        <div
+          className="hover:scale-150 duration-300 hover:text-primary cursor-pointer"
+          onClick={() => setTheme("light")}
+        >
+          <Sun size={24} />
+        </div>
+      ) : (
+        <div
+          className="hover:scale-150 duration-300 hover:text-primary cursor-pointer"
+          onClick={() => setTheme("dark")}
+        >
+          <Moon size={24} />
+        </div>
+      )}
     </div>
   );
 }

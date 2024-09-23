@@ -31,7 +31,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="bg-secondary">
+          <div>
             <HeaderDemo />
             <main>{children}</main>
             <Toaster richColors closeButton />
