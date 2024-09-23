@@ -2,22 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/toggle-button";
-import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import { Button } from "@/components/ui/button";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Toaster } from "@/components/ui/sonner";
-import Header from "@/components/header";
 import HeaderDemo from "@/components/header-template";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -39,16 +26,20 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="overflow-x-hidden dark:bg-gray-800">
+      <body className="overflow-hidden dark:bg-gray-800">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <HeaderDemo />
-          <main>{children}</main>
-          <Toaster richColors closeButton />
+          <div className="max-h-screen !overflow-hidden">
+            <BackgroundBeamsWithCollision>
+              <HeaderDemo />
+              <main>{children}</main>
+              <Toaster richColors closeButton />
+            </BackgroundBeamsWithCollision>
+          </div>
         </ThemeProvider>
       </body>
     </html>
