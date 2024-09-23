@@ -1,6 +1,6 @@
 import React from "react";
 import { ModeToggle } from "./toggle-button";
-import { BadgeInfo, Gem, House, Phone } from "lucide-react";
+import { BadgeInfo, Gem, House, Phone, User } from "lucide-react";
 
 const HeaderDemo = () => {
   return (
@@ -25,7 +25,7 @@ const HeaderDemo = () => {
               size={22}
               className="group-hover:scale-125 duration-300"
             />
-             <span className="absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto left-7 -top-1 text-nowrap text-sm bg-primary pl-4 pr-4 py-1 rounded-r-full duration-300">
+            <span className="absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto left-7 -top-1 text-nowrap text-sm bg-primary pl-4 pr-4 py-1 rounded-r-full duration-300">
               Learn
             </span>
           </a>
@@ -33,6 +33,12 @@ const HeaderDemo = () => {
             <Phone size={22} className="group-hover:scale-125 duration-300" />
             <span className="absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto left-7 -top-1 text-nowrap text-sm bg-primary pl-4 pr-4 py-1 rounded-r-full duration-300">
               Contact
+            </span>
+          </a>
+          <a href="#" className="relative group">
+            <User size={22} className="group-hover:scale-125 duration-300" />
+            <span className="absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto left-7 -top-1 text-nowrap text-sm bg-primary pl-4 pr-4 py-1 rounded-r-full duration-300">
+              Profile
             </span>
           </a>
         </div>
