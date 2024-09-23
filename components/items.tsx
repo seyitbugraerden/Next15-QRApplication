@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 const Items = async ({ slug }: { slug: any }) => {
-  console.log(slug)
   try {
     const userData = await prisma.user.findUnique({
       where: { slug: slug },
@@ -22,7 +21,7 @@ const Items = async ({ slug }: { slug: any }) => {
       <div className="flex flex-col gap-5 w-full">
         {userLinks.map((item) => (
           <Link
-            className="p-5 border-[1px] border-primary rounded-2xl w-full text-center flex flex-row items-center gap-4"
+            className="p-5 border-[1px] border-primary rounded-2xl w-full text-center flex flex-row items-center gap-4 capitalize"
             key={item.id}
             href={item.link}
           >
