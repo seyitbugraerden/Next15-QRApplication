@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import HeaderDemo from "@/components/header-template";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,19 +24,17 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="overflow-hidden dark:bg-gray-800">
+      <body className="!overflow-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="max-h-screen !overflow-hidden">
-            <BackgroundBeamsWithCollision>
-              <HeaderDemo />
-              <main>{children}</main>
-              <Toaster richColors closeButton />
-            </BackgroundBeamsWithCollision>
+          <div className="bg-secondary">
+            <HeaderDemo />
+            <main>{children}</main>
+            <Toaster richColors closeButton />
           </div>
         </ThemeProvider>
       </body>
