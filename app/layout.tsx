@@ -6,8 +6,9 @@ import { ModeToggle } from "@/components/toggle-button";
 import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import Transition from "./transition";
 import { Toaster } from "@/components/ui/sonner";
+import Header from "@/components/header";
+import HeaderDemo from "@/components/header-template";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,8 +29,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { getUser } = getKindeServerSession();
-  const data = await getUser();
   return (
     <html lang="en">
       <head>
@@ -40,31 +39,15 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="overflow-x-hidden dark:bg-gray-800">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-row items-center gap-6 absolute right-5 top-5 z-[999]">
-            <ModeToggle />
-            {data ? (
-              <LogoutLink>
-                <Button variant={"default"}>Log out</Button>
-              </LogoutLink>
-            ) : (
-              <LoginLink postLoginRedirectURL="/dashboard">
-                <Button
-                  className="w-full font-semibold text-lg"
-                  variant={"default"}
-                >
-                  Sign in
-                </Button>
-              </LoginLink>
-            )}
-          </div>
-          <main className="overflow-x-hidden">{children}</main>
+          <HeaderDemo />
+          <main>{children}</main>
           <Toaster richColors closeButton />
         </ThemeProvider>
       </body>
