@@ -32,7 +32,6 @@ export const ForExampleDemo = async (prevState: any, formData: FormData) => {
     return redirect(`/${slug}`);
   } catch (error) {
     console.error("Error creating user:", error);
-    throw new Error("Could not create user.");
   }
 };
 
@@ -52,6 +51,5 @@ export const AddNewLink = async (prevState: any, formData: FormData) => {
     return response;
   } catch (error) {
     console.error("Error creating link:", error);
-    throw new Error("Could not create link.");
   }
 };

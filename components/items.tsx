@@ -1,9 +1,12 @@
 import prisma from "@/app/utils/db";
 import Link from "next/link";
 import React from "react";
+import AddLink from "./add-link";
+import { requireUser } from "@/app/require-user";
 
 const Items = async ({ slug }: { slug: any }) => {
   try {
+    const user = await requireUser();
     const userData = await prisma.user.findUnique({
       where: { slug: slug },
     });
@@ -16,7 +19,6 @@ const Items = async ({ slug }: { slug: any }) => {
         userId: userData.id,
       },
     });
-
     return (
       <div className="flex flex-col gap-5 w-full">
         {userLinks.map((item) => (
@@ -28,6 +30,7 @@ const Items = async ({ slug }: { slug: any }) => {
             {item.title}
           </Link>
         ))}
+        {user && user.id === userLinks[0].userId && <AddLink />}
       </div>
     );
   } catch (error) {

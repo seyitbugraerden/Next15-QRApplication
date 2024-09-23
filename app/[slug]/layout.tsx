@@ -1,4 +1,5 @@
 import React from "react";
+import { requireUser } from "../require-user";
 
 const layout = async ({
   children,
