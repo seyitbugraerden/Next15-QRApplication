@@ -4,6 +4,8 @@ import { requireUser } from "../require-user";
 import ProfileCard from "@/components/profile-card";
 import { GetUser } from "../actions";
 import AddLink from "@/components/add-link";
+import { Plus } from "lucide-react";
+import Link from "next/link";
 
 const QRPage = async ({ params }: { params: any }) => {
   const signedUser = await requireUser();
@@ -11,12 +13,20 @@ const QRPage = async ({ params }: { params: any }) => {
   return (
     <>
       <div className="xl:max-w-[1140px] mx-auto bg-black/30 border border-[#135D66] backdrop-blur-xl p-12">
-        <div className="flex flex-col gap-6 items-center min-w-[360px]">
+        <div className="flex flex-col gap-6 items-center">
           <ProfileCard user={getUser} state={params.slug} />
           <Items slug={params.slug} />
+          {signedUser?.id === getUser?.id && (
+            <Link
+              href={`/${params.slug}/add`}
+              className="p-5 border border-white/50 rounded-2xl w-full text-center flex flex-row items-center justify-center gap-4 capitalize hover:bg-[#77B0AA] duration-300"
+            >
+              <Plus /> Add New Link
+            </Link>
+          )}
         </div>
       </div>
-      {signedUser?.id === getUser?.id && <AddLink />}
+      
     </>
   );
 };

@@ -3,21 +3,20 @@ import { AddNewLink } from "@/app/actions";
 import React, { useActionState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { toast } from "sonner";
 import OutsideClickHandler from "react-outside-click-handler";
 
 const AddLink = () => {
   const [state, action] = useActionState(AddNewLink, null);
   if (!state) {
-    toast.error("Link can't be added");
+    console.log("Link can't be added");
   } else {
-    toast.success("Link has been added");
+    console.log("Link has been added");
   }
   return (
     <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/30">
       <OutsideClickHandler
         onOutsideClick={() => {
-          alert("You clicked outside of this component!!!");
+          window.location.href = "/";
         }}
       >
         <form

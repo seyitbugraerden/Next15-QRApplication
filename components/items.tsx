@@ -20,7 +20,7 @@ const Items = async ({ slug }: { slug: any }) => {
       },
     });
     return (
-      <div className="flex flex-col gap-5 w-full">
+      <div className="flex flex-row gap-5 w-full">
         {userLinks?.map((item) => (
           <Link
             className="p-5 border border-white/50 rounded-2xl w-full text-center flex flex-row items-center justify-center gap-4 capitalize hover:bg-[#77B0AA] duration-300"
