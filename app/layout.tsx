@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import HeaderDemo from "@/components/header-template";
-import AddLink from "@/components/add-link";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Get Your Free QR Code",

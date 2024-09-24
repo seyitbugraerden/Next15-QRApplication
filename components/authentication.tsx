@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function AuthenticationPage() {
   return (
     <>
-      <div className="relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      <div className="relative h-screen  items-center justify-center grid lg:grid-cols-2 lg:px-0 max-w-[95%] mx-auto lg:max-w-full">
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex">
           <div className="absolute inset-0 bg-zinc-900">
             <Image
@@ -35,7 +35,7 @@ export default async function AuthenticationPage() {
           </div>
         </div>
         <div className="lg:p-8">
-          <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+          <div className="mx-auto flex w-full flex-col justify-center space-y-6 lg:w-[350px]">
             <Image src="/logo.png" width={600} height={200} alt="logo" />
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="text-2xl font-semibold tracking-tight">
@@ -47,7 +47,7 @@ export default async function AuthenticationPage() {
             </div>
             <LoginLink postLoginRedirectURL="/dashboard">
               <Button
-                className="w-full font-semibold text-lg"
+                className="w-full font-semibold text-lg hover:bg-white hover:text-black duration-300"
                 variant={"default"}
               >
                 Sign in
@@ -55,7 +55,7 @@ export default async function AuthenticationPage() {
             </LoginLink>
             <RegisterLink postLoginRedirectURL="/api/auth/creation">
               <Button
-                className="w-full text-lg font-semibold"
+                className="w-full text-lg font-semibold hover:bg-white hover:text-black duration-300"
                 variant={"outline"}
               >
                 Sign up
