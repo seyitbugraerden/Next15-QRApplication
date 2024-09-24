@@ -1,13 +1,6 @@
 import React from "react";
-import { requireUser } from "../require-user";
 
-const layout = async ({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: any;
-}) => {
+const layout = async ({ children }: { children: React.ReactNode }) => {
   return <div>{children}</div>;
 };
 
