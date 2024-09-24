@@ -25,9 +25,6 @@ export default async function AuthenticationPage() {
               className="absolute top-0 left-0 filter brightness-[.4]"
             />
           </div>
-          <div className="relative z-20 flex items-center text-lg font-medium">
-            Mllenium Digital
-          </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
