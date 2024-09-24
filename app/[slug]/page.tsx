@@ -14,9 +14,9 @@ const QRPage = async ({ params }: { params: any }) => {
         <div className="flex flex-col gap-6 items-center min-w-[360px]">
           <ProfileCard user={getUser} state={params.slug} />
           <Items slug={params.slug} />
-          {signedUser?.id === getUser?.id && <AddLink />}
         </div>
       </div>
+      {signedUser?.id === getUser?.id && <AddLink />}
     </>
   );
 };
