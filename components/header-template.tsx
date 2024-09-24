@@ -22,7 +22,7 @@ const HeaderDemo = async () => {
               Pricing
             </span>
           </a>
-          <a href="#" className="relative group">
+          <a href="/features" className="relative group">
             <BadgeInfo
               size={22}
               className="group-hover:scale-125 duration-300  "

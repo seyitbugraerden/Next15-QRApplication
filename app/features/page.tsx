@@ -1,12 +1,12 @@
-import Pricing from "@/components/pricing";
+import Features from "@/components/features";
 import React from "react";
 
-const PricingPage = () => {
+const page = () => {
   return (
     <div className="w-screen h-screen flex items-center justify-center">
-      <Pricing />
+      <Features />
     </div>
   );
 };
 
-export default PricingPage;
+export default page;
