@@ -24,7 +24,7 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#003C43] text-white w-screen h-screen pt-12">
+      <body className="bg-[#003C43] text-white w-screen h-screen">
         <HeaderDemo />
         <main>{children}</main>
         <Toaster richColors closeButton />

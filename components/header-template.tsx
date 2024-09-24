@@ -7,7 +7,7 @@ const HeaderDemo = async () => {
   const user = await requireUser();
   return (
     <header>
-      <nav className="fixed lg:top-[27%] bottom-0 lg:left-[50px] origin-center">
+      <nav className="fixed lg:top-[27%] bottom-0 lg:left-[50px] origin-center z-[9999]">
         <div className="flex lg:flex-col justify-between lg:justify-center items-center bg-black/20 dark:bg-white/30 backdrop:blur-lg gap-10 py-10 w-screen lg:w-full lg:rounded-full px-12 lg:px-3 text-black dark:text-white">
           <a href="/home" className="relative group">
             <House size={22} className="group-hover:scale-125 duration-300 " />
