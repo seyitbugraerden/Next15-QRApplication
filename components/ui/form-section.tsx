@@ -55,6 +55,7 @@ const FormSection = ({
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
+            required
             defaultValue={user.username}
             type="text"
             name="username"
@@ -70,6 +71,7 @@ const FormSection = ({
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
+            required
             defaultValue={user.email}
             type="email"
             name="email"
@@ -85,6 +87,7 @@ const FormSection = ({
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
+            required
             defaultValue={user.slug ? user.slug : undefined}
             type="text"
             name="slug"
@@ -119,6 +122,7 @@ const FormSection = ({
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
+            required
             defaultValue={user.slug ? user.slug : undefined}
             type="text"
             name="orgname"
@@ -135,6 +139,7 @@ const FormSection = ({
         <div className="relative z-0 w-full mb-5 group">
           <label className="inline-flex items-center me-5 cursor-pointer">
             <input
+              required
               type="checkbox"
               className="sr-only peer"
               checked={checkedValue}
