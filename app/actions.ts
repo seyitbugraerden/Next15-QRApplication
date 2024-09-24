@@ -3,6 +3,22 @@ import { redirect } from "next/navigation";
 import { requireUser } from "./require-user";
 import prisma from "@/app/utils/db";
 
+// Get Section
+
+export const CheckUserSlug = async (userId: string) => {
+  const id = userId;
+
+  const response = await prisma.user.findUnique({
+    where: {
+      id: userId,
+    },
+  });
+  if (response) {
+    return redirect(`/${response.slug}`);
+  }
+  return response;
+};
+
 // Create Section
 
 export const ForExampleDemo = async (prevState: any, formData: FormData) => {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import { CheckUserSlug } from "../actions";
 
 const Dashboard = async () => {
   const { getUser, isAuthenticated } = getKindeServerSession();
@@ -11,7 +12,7 @@ const Dashboard = async () => {
     redirect("/");
   }
   const checked = await isAuthenticated();
-
+  const checkUser = await CheckUserSlug(user.id);
   return (
     <>
       <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
