@@ -24,17 +24,10 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#fff] dark:bg-[#1d374973] transition-colors duration-200">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <HeaderDemo />
-          <main>{children}</main>
-          <Toaster richColors closeButton />
-        </ThemeProvider>
+      <body className="bg-[#003C43] text-white">
+        <HeaderDemo />
+        <main>{children}</main>
+        <Toaster richColors closeButton />
       </body>
     </html>
   );

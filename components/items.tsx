@@ -23,7 +23,7 @@ const Items = async ({ slug }: { slug: any }) => {
       <div className="flex flex-col gap-5 w-full">
         {userLinks.map((item) => (
           <Link
-            className="p-5 border-[1px] border-primary rounded-2xl w-full text-center flex flex-row items-center gap-4 capitalize"
+            className="p-5 border border-white/50 rounded-2xl w-full text-center flex flex-row items-center gap-4 capitalize hover:bg-[#77B0AA] duration-300"
             key={item.id}
             href={item.link}
           >

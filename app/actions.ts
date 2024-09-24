@@ -6,8 +6,6 @@ import prisma from "@/app/utils/db";
 // Get Section
 
 export const CheckUserSlug = async (userId: string) => {
-  const id = userId;
-
   const response = await prisma.user.findUnique({
     where: {
       id: userId,
@@ -16,6 +14,15 @@ export const CheckUserSlug = async (userId: string) => {
   if (response) {
     return redirect(`/${response.slug}`);
   }
+  return response;
+};
+
+export const GetUser = async (slug: string) => {
+  const response = await prisma.user.findUnique({
+    where: {
+      slug: slug,
+    },
+  });
   return response;
 };
 
