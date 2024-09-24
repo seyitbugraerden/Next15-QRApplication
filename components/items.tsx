@@ -20,17 +20,19 @@ const Items = async ({ slug }: { slug: any }) => {
       },
     });
     return (
-      <div className="flex flex-row gap-5 w-full">
-        {userLinks?.map((item) => (
-          <Link
-            className="p-5 border border-white/50 rounded-2xl w-full text-center flex flex-row items-center justify-center gap-4 capitalize hover:bg-[#77B0AA] duration-300"
-            key={item.id}
-            href={item.link}
-          >
-            {item.title}
-          </Link>
-        ))}
-      </div>
+      <>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {userLinks?.map((item) => (
+            <Link
+              className="flex justify-center items-center p-3 text-base font-bold rounded-lg bg-black/20 text-white/90 hover:bg-black/40 w-52 h-12 text-nowrap"
+              key={item.id}
+              href={item.link}
+            >
+              {item.title}
+            </Link>
+          ))}
+        </div>
+      </>
     );
   } catch (error) {
     console.error("Error fetching user data or links:", error);

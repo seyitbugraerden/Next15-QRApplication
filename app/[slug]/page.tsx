@@ -12,21 +12,21 @@ const QRPage = async ({ params }: { params: any }) => {
   const getUser = await GetUser(params.slug);
   return (
     <>
-      <div className="xl:max-w-[1140px] mx-auto bg-black/30 border border-[#135D66] backdrop-blur-xl p-12">
-        <div className="flex flex-col gap-6 items-center">
+      <div className="p-12">
+        <div className="flex flex-col gap-6 items-center justify-center ">
           <ProfileCard user={getUser} state={params.slug} />
+
           <Items slug={params.slug} />
           {signedUser?.id === getUser?.id && (
             <Link
               href={`/${params.slug}/add`}
-              className="p-5 border border-white/50 rounded-2xl w-full text-center flex flex-row items-center justify-center gap-4 capitalize hover:bg-[#77B0AA] duration-300"
+              className="flex justify-center items-center p-3 text-base font-bold rounded-lg bg-black/20 text-white/90 hover:bg-black/40 w-52"
             >
               <Plus /> Add New Link
             </Link>
           )}
         </div>
       </div>
-      
     </>
   );
 };
