@@ -11,6 +11,7 @@ const AddLink = () => {
     console.log("Link can't be added");
   } else {
     console.log("Link has been added");
+    window.location.href = "/";
   }
   return (
     <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/30">

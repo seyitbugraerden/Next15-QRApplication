@@ -53,7 +53,7 @@ export const ForExampleDemo = async (prevState: any, formData: FormData) => {
       },
     });
 
-    return redirect(`/${slug}`);
+    return (window.location.href = `/${slug}`);
   } catch (error) {
     console.error("Error creating user:", error);
   }
