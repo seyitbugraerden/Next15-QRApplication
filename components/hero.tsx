@@ -30,8 +30,8 @@ const Hero = () => {
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path d="m9 18 6-6-6-6" />
                 </svg>

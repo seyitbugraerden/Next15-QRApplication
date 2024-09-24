@@ -16,7 +16,7 @@ const HeaderDemo = async () => {
             </span>
           </a>
 
-          <a href="#" className="relative group">
+          <a href="/pricing" className="relative group">
             <Gem size={22} className="group-hover:scale-125 duration-300 " />
             <span className="absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto left-[34px] -top-1 text-nowrap text-sm bg-white/30  backdrop:blur-lg pl-4 pr-4 py-1 rounded-r-full duration-300">
               Pricing
