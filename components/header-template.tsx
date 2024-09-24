@@ -1,5 +1,12 @@
 import React from "react";
-import { BadgeInfo, Gem, House, LogOut, Phone, User } from "lucide-react";
+import {
+  BadgeInfo,
+  Gem,
+  House,
+  LogOut,
+  ShieldQuestion,
+  User,
+} from "lucide-react";
 import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { requireUser } from "@/app/require-user";
 
@@ -31,8 +38,11 @@ const HeaderDemo = async () => {
               Learn
             </span>
           </a>
-          <a href="#" className="relative group">
-            <Phone size={22} className="group-hover:scale-125 duration-300 " />
+          <a href="/faq" className="relative group">
+            <ShieldQuestion
+              size={22}
+              className="group-hover:scale-125 duration-300 "
+            />
             <span className="absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto left-[34px] -top-1 text-nowrap text-sm bg-white/30  backdrop:blur-lg pl-4 pr-4 py-1 rounded-r-full duration-300">
               Contact
             </span>
