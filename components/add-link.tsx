@@ -3,9 +3,15 @@ import { AddNewLink } from "@/app/actions";
 import React, { useActionState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
 
 const AddLink = () => {
   const [state, action] = useActionState(AddNewLink, null);
+  if (!state) {
+    toast.error("Link can't be added");
+  } else {
+    toast.success("Link has been added");
+  }
   return (
     <form
       action={action}

@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import { requireUser } from "./require-user";
 import prisma from "@/app/utils/db";
+import { toast } from "sonner";
 
 // Get Section
 
@@ -62,17 +63,20 @@ export const AddNewLink = async (prevState: any, formData: FormData) => {
   const user = await requireUser();
   const title = (formData.get("title") as string) || "";
   const link = (formData.get("link") as string) || "";
-
-  try {
-    const response = await prisma.link.create({
-      data: {
-        title: title,
-        link: link,
-        userId: user.id,
-      },
-    });
-    return response;
-  } catch (error) {
-    console.error("Error creating link:", error);
+  if (title !== "" && link !== "") {
+    try {
+      const response = await prisma.link.create({
+        data: {
+          title: title,
+          link: link,
+          userId: user.id,
+        },
+      });
+      return response;
+    } catch (error) {
+      console.error("Error creating link:", error);
+    }
+  } else {
+    return false;
   }
 };

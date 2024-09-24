@@ -1,10 +1,9 @@
 import React from "react";
 import Items from "@/components/items";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { requireUser } from "../require-user";
 import ProfileCard from "@/components/profile-card";
 import { GetUser } from "../actions";
-import QRCodePage from "@/components/qr-code";
+import AddLink from "@/components/add-link";
 
 const QRPage = async ({ params }: { params: any }) => {
   const signedUser = await requireUser();
@@ -15,6 +14,7 @@ const QRPage = async ({ params }: { params: any }) => {
         <div className="flex flex-col gap-6 items-center min-w-[360px]">
           <ProfileCard user={getUser} state={params.slug} />
           <Items slug={params.slug} />
+          {signedUser?.id === getUser?.id && <AddLink />}
         </div>
       </div>
     </>
