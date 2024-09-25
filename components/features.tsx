@@ -37,11 +37,11 @@ const Features = () => {
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-2 md:space-y-4">
                 <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200">
-                  Collaborative tools to design user experience
+                  Allow people to explore with your limitless library of links
                 </h2>
-                <p className="text-gray-500 dark:text-neutral-500">
-                  Use our tools to explore your ideas and make your vision come
-                  true. Then share your work easily.
+                <p className="text-white">
+                  Develop your organization with this tool and allow users to
+                  discover you.
                 </p>
               </div>
 
@@ -64,9 +64,9 @@ const Features = () => {
                     </svg>
                   </span>
                   <div className="grow">
-                    <span className="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                      <span className="font-bold">Less routine</span> – more
-                      creativity
+                    <span className="text-sm sm:text-base text-white">
+                      <span className="font-bold text-white">Create Free</span>{" "}
+                      – QR Code
                     </span>
                   </div>
                 </li>
@@ -89,8 +89,8 @@ const Features = () => {
                     </svg>
                   </span>
                   <div className="grow">
-                    <span className="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                      Hundreds of thousands saved
+                    <span className="text-sm sm:text-base text-white">
+                     Unlimited Links
                     </span>
                   </div>
                 </li>
@@ -113,9 +113,9 @@ const Features = () => {
                     </svg>
                   </span>
                   <div className="grow">
-                    <span className="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                      Scale budgets{" "}
-                      <span className="font-bold">efficiently</span>
+                    <span className="text-sm sm:text-base text-white">
+                      Private{" "}
+                      <span className="font-bold">Slug Creation</span>
                     </span>
                   </div>
                 </li>
