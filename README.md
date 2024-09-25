@@ -93,7 +93,7 @@ Next15-LandingPage/
 
 ## :gear: Tech Stack
 
-[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Next JS](https://skillicons.dev/icons?i=next "Next JS")](https://nextjs.org/ "Next JS") [![JavaScript](https://skillicons.dev/icons?i=ts "Typescript")](https://developer.mozilla.org/en-US/docs/Web/Typescript "Typescript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Vercel](https://skillicons.dev/icons?i=vercel "Vercel")](https://vercel.com/)
+[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Next JS](https://skillicons.dev/icons?i=next "Next JS")](https://nextjs.org/ "Next JS") [![JavaScript](https://skillicons.dev/icons?i=ts "Typescript")](https://developer.mozilla.org/en-US/docs/Web/Typescript "Typescript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Supabase](https://skillicons.dev/icons?i=supabase "Supabase")](https://supabase.com/) [![Prisma](https://skillicons.dev/icons?i=prisma "Prisma")](https://www.prisma.io/)
 
 ## :wrench: Stats
 
