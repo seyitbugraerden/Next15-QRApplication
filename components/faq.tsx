@@ -3,10 +3,10 @@ import React from "react";
 const Faq = () => {
   return (
     <div>
-      <div className=" px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="max-w-2xl mx-auto mb-10 lg:mb-14">
           <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-            You might be wondering...
+            Frequently Asked Questions
           </h2>
         </div>
 
@@ -14,7 +14,7 @@ const Faq = () => {
           <div className="py-8 first:pt-0 last:pb-0">
             <div className="flex gap-x-5">
               <svg
-                className="shrink-0 mt-1 size-6 text-gray-500 dark:text-neutral-500"
+                className="shrink-0 mt-1 size-6 text-white/50"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -31,13 +31,11 @@ const Faq = () => {
               </svg>
 
               <div className="grow">
-                <h3 className="md:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                  Can I cancel at anytime?
+                <h3 className="md:text-lg font-semibold text-white">
+                  How do I generate a QR code?
                 </h3>
-                <p className="mt-1 text-gray-500 dark:text-neutral-500">
-                  Yes, you can cancel anytime no questions are asked while you
-                  cancel but we would highly appreciate if you will give us some
-                  feedback.
+                <p className="mt-1 text-white/50">
+                  First, sign in to your account and complete your profile details. Once logged in, you will be able to create a QR code using the available tools.
                 </p>
               </div>
             </div>
@@ -46,7 +44,7 @@ const Faq = () => {
           <div className="py-8 first:pt-0 last:pb-0">
             <div className="flex gap-x-5">
               <svg
-                className="shrink-0 mt-1 size-6 text-gray-500 dark:text-neutral-500"
+                className="shrink-0 mt-1 size-6 text-white/50"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -63,12 +61,11 @@ const Faq = () => {
               </svg>
 
               <div className="grow">
-                <h3 className="md:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                  My team has credits. How do we use them?
+                <h3 className="md:text-lg font-semibold text-white">
+                  Are my links publicly accessible?
                 </h3>
-                <p className="mt-1 text-gray-500 dark:text-neutral-500">
-                  Once your team signs up for a subscription plan. This is where
-                  we sit down, grab a cup of coffee and dial in the details.
+                <p className="mt-1 text-white/50">
+                  Yes, your links are accessible to anyone who has the direct URL. However, you can manage the visibility settings through your account dashboard.
                 </p>
               </div>
             </div>
@@ -77,7 +74,7 @@ const Faq = () => {
           <div className="py-8 first:pt-0 last:pb-0">
             <div className="flex gap-x-5">
               <svg
-                className="shrink-0 mt-1 size-6 text-gray-500 dark:text-neutral-500"
+                className="shrink-0 mt-1 size-6 text-white/50"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -94,12 +91,11 @@ const Faq = () => {
               </svg>
 
               <div className="grow">
-                <h3 className="md:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                  How does Preline's pricing work?
+                <h3 className="md:text-lg font-semibold text-white">
+                  How can I download my QR code as an SVG file?
                 </h3>
-                <p className="mt-1 text-gray-500 dark:text-neutral-500">
-                  Our subscriptions are tiered. Understanding the task at hand
-                  and ironing out the wrinkles is key.
+                <p className="mt-1 text-white/50">
+                  Once you've completed your profile, you'll find a "Download" button beneath your profile image. Clicking on it will allow you to download your QR code in SVG format.
                 </p>
               </div>
             </div>
@@ -108,7 +104,7 @@ const Faq = () => {
           <div className="py-8 first:pt-0 last:pb-0">
             <div className="flex gap-x-5">
               <svg
-                className="shrink-0 mt-1 size-6 text-gray-500 dark:text-neutral-500"
+                className="shrink-0 mt-1 size-6 text-white/50"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -125,48 +121,11 @@ const Faq = () => {
               </svg>
 
               <div className="grow">
-                <h3 className="md:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                  How secure is Preline?
+                <h3 className="md:text-lg font-semibold text-white">
+                  Can anyone else modify my links?
                 </h3>
-                <p className="mt-1 text-gray-500 dark:text-neutral-500">
-                  Protecting the data you trust to Preline is our first
-                  priority. This part is really crucial in keeping the project
-                  in line to completion.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="py-8 first:pt-0 last:pb-0">
-            <div className="flex gap-x-5">
-              <svg
-                className="shrink-0 mt-1 size-6 text-gray-500 dark:text-neutral-500"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                <path d="M12 17h.01" />
-              </svg>
-
-              <div className="grow">
-                <h3 className="md:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                  How do I get access to a theme I purchased?
-                </h3>
-                <p className="mt-1 text-gray-500 dark:text-neutral-500">
-                  If you lose the link for a theme you purchased, don't panic!
-                  We've got you covered. You can login to your account, tap your
-                  avatar in the upper right corner, and tap Purchases. If you
-                  didn't create a login or can't remember the information, you
-                  can use our handy Redownload page, just remember to use the
-                  same email you originally made your purchases with.
+                <p className="mt-1 text-white/50">
+                  No, only the original creator of the QR code can modify or edit the links associated with it.
                 </p>
               </div>
             </div>
