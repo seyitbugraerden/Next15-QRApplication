@@ -3,7 +3,6 @@ import { AddNewLink } from "@/app/actions";
 import React, { useActionState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import OutsideClickHandler from "react-outside-click-handler";
 
 const AddLink = () => {
   const [state, action] = useActionState(AddNewLink, null);
@@ -15,11 +14,6 @@ const AddLink = () => {
   }
   return (
     <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/30">
-      <OutsideClickHandler
-        onOutsideClick={() => {
-          window.location.href = "/";
-        }}
-      >
         <form
           action={action}
           className="bg-[#135D66] flex flex-col p-16 gap-5 rounded-xl"
@@ -45,7 +39,6 @@ const AddLink = () => {
 
           <Button className="hover:bg-black hover:text-white">Add Link</Button>
         </form>
-      </OutsideClickHandler>
     </div>
   );
 };

@@ -72,6 +72,9 @@ export const AddNewLink = async (prevState: any, formData: FormData) => {
           userId: user.id,
         },
       });
+      if (response) {
+        return (window.location.href = "/");
+      }
       return response;
     } catch (error) {
       console.error("Error creating link:", error);
