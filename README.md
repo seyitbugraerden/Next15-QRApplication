@@ -22,7 +22,6 @@
 - [Acknowledgements](#gem-acknowledgements)
 - [Follow Me](#rocket-follow-me)
 - [Learn More](#books-learn-more)
-- [Deploy on Vercel](#page_with_curl-deploy-on-vercel)
 - [Give A Star](#star-give-a-star)
 
 </details>
@@ -93,7 +92,7 @@ Next15-LandingPage/
 
 ## :gear: Tech Stack
 
-[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Next JS](https://skillicons.dev/icons?i=next "Next JS")](https://nextjs.org/ "Next JS") [![JavaScript](https://skillicons.dev/icons?i=ts "Typescript")](https://developer.mozilla.org/en-US/docs/Web/Typescript "Typescript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Vercel](https://skillicons.dev/icons?i=vercel "Vercel")](https://vercel.com/)
+[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Next JS](https://skillicons.dev/icons?i=next "Next JS")](https://nextjs.org/ "Next JS") [![JavaScript](https://skillicons.dev/icons?i=ts "Typescript")](https://developer.mozilla.org/en-US/docs/Web/Typescript "Typescript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Supabase](https://skillicons.dev/icons?i=supabase "Supabase")](https://supabase.com/) [![Prisma](https://skillicons.dev/icons?i=prisma "Prisma")](https://www.prisma.io/)
 
 ## :wrench: Stats
 
@@ -105,7 +104,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 
 ## :gem: Acknowledgements
 
-Useful resources and dependencies that are used in Modern Portfolio.
+Useful resources and dependencies that are used in QR Store.
 
 ### Production Dependencies
 
@@ -114,6 +113,15 @@ Useful resources and dependencies that are used in Modern Portfolio.
 - [react](https://www.npmjs.com/package/react): 19.0
 - [react-countup](https://www.npmjs.com/package/react-countup): ^6.5.3
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.0
+- [prisma](https://www.npmjs.com/package/lucide-react): ^5.17
+- [react-outside-click-handler](https://www.npmjs.com/package/lucide-react): ^1.3.0
+- [react-qr-code](https://www.npmjs.com/package/lucide-react): ^2.0.15
+- [sonner](https://www.npmjs.com/package/lucide-react): ^1.5.0
+- [tailwind-merge](https://www.npmjs.com/package/lucide-react): ^2.5.2
+- [tailwindcss-animate](https://www.npmjs.com/package/lucide-react): ^1.0.7
+- [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/lucide-react): ^2.3.8
+- [@prisma/client](https://www.npmjs.com/package/lucide-react): ^5.17
+- [@radix-ui/react-dialog](https://www.npmjs.com/package/lucide-react): ^1.1.1
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.441.0
 
 ### Development Dependencies
@@ -143,11 +151,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## :page_with_curl: Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## :star: Give A Star
 
