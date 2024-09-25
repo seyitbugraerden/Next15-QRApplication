@@ -22,7 +22,6 @@
 - [Acknowledgements](#gem-acknowledgements)
 - [Follow Me](#rocket-follow-me)
 - [Learn More](#books-learn-more)
-- [Deploy on Vercel](#page_with_curl-deploy-on-vercel)
 - [Give A Star](#star-give-a-star)
 
 </details>
