@@ -38,7 +38,7 @@ const HeaderDemo = async () => {
               Learn
             </span>
           </a>
-          <a href="/faq" className="relative group">
+          <a href="/learn" className="relative group">
             <ShieldQuestion
               size={22}
               className="group-hover:scale-125 duration-300 "
